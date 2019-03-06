@@ -6,6 +6,7 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
 - [🐣 Introduction](#-introduction)
@@ -43,6 +44,7 @@ He won 2 Oscars. [Another 82 wins & 166 nominations](https://www.imdb.com/name/n
 <li>Fork the project via `github`
 
 ![fork](./fork.png)
+
 </li>
 
 <li>Clone your forked repository project `https://github.com/YOUR_USERNAME/denzel`
@@ -51,6 +53,7 @@ He won 2 Oscars. [Another 82 wins & 166 nominations](https://www.imdb.com/name/n
 ❯ cd /path/to/workspace
 ❯ git clone git@github.com:YOUR_USERNAME/denzel.git
 ```
+
 </li>
 
 <li><strong>Do things</strong></li>
@@ -61,23 +64,24 @@ He won 2 Oscars. [Another 82 wins & 166 nominations](https://www.imdb.com/name/n
 ❯ git add -A && git commit -m "feat(movies): get a random movie"
 ❯ git push origin master
 ```
+
 </li>
 </ol>
 
 **Note**:
 
-* [why following a commit message convention?](https://www.conventionalcommits.org)
-* if you catch an error about authentication, [add your ssh to your github profile](https://help.github.com/articles/connecting-to-github-with-ssh/).
-* If you need some helps on git commands, read [git - the simple guide](http://rogerdudler.github.io/git-guide/)
+- [why following a commit message convention?](https://www.conventionalcommits.org)
+- if you catch an error about authentication, [add your ssh to your github profile](https://help.github.com/articles/connecting-to-github-with-ssh/).
+- If you need some helps on git commands, read [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 
 ## 🏃‍♀️ Steps to do
 
 ### Definition and Configuration
 
-* A **must-watch** movie is a movie with a `metascore` higher than `70`.
-* API should listen locally the port `9292`.
-* Data should be stored in MongoDB. Backed either with a DaaS: [mLab](https://mlab.com), [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) etc... Either with a [container Docker](https://hub.docker.com/r/mvertes/alpine-mongo).
-* To test and check your API, you should use a client like [Insomnia](https://insomnia.rest) or [Postman](https://www.getpostman.com/products)
+- A **must-watch** movie is a movie with a `metascore` higher than `70`.
+- API should listen locally the port `9292`.
+- Data should be stored in MongoDB. Backed either with a DaaS: [mLab](https://mlab.com), [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) etc... Either with a [container Docker](https://hub.docker.com/r/mvertes/alpine-mongo).
+- To test and check your API, you should use a client like [Insomnia](https://insomnia.rest) or [Postman](https://www.getpostman.com/products)
 
 ### REST endpoints to implement
 
@@ -171,13 +175,13 @@ Search for Denzel's movies.
 
 This endpoint accepts the following optional query string parameters:
 
-* `limit` - number of movies to return (default: 5)
-* `metascore` - filter by metascore (default: 0)
+- `limit` - number of movies to return (default: 5)
+- `metascore` - filter by metascore (default: 0)
 
 The results array should be sorted by metascore in descending way.
 
 ```sh
-❯ curl -H "Accept: application/json" http://localhost:9292/movies/search?limit=5&metascore=77
+❯ curl -H "Accept: application/json" "http://localhost:9292/movies/search?limit=5&metascore=77"
 {
   "limit": 5,
   "results": [
@@ -224,8 +228,8 @@ Save a watched date and a review.
 
 This endpoint accepts the following post parameters:
 
-* `date` - the watched date
-* `review` - the personal review
+- `date` - the watched date
+- `review` - the personal review
 
 ```sh
 ❯ curl -X POST -d '{"date": "2019-03-04", "review": "😍 🔥"}' -H "Content-Type: application/json" http://localhost:9292/movies/tt0328107
@@ -234,16 +238,15 @@ This endpoint accepts the following post parameters:
 }
 ```
 
-
 ### GraphQL endpoints to implement
 
 Same definitions as REST API with `/graphql` endpoint.
 
-* Populate the database
-* Fetch a random **must-watch** movie
-* Fetch a specific movie
-* Search for Denzel's movies
-* Save a watched date and a review.
+- Populate the database
+- Fetch a random **must-watch** movie
+- Fetch a specific movie
+- Search for Denzel's movies
+- Save a watched date and a review.
 
 #### (A suggested) Schema
 
@@ -289,17 +292,17 @@ The MVP definiton could be:
 
 Each time, we open the web application or refresh the page, fetch a random **must-watch** movie and
 
-* display the title
-* display the synopsis
-* display the cover
-* display the metascore
-* display the review
-* allow to open the IMDb record
+- display the title
+- display the synopsis
+- display the cover
+- display the metascore
+- display the review
+- allow to open the IMDb record
 
 ## 🛣️ Related course
 
-* [Course 7 - API-ness](https://github.com/92bondstreet/javascript-empire#-course-7---api-ness)
-* [Course 8 - Progressive Web App, world of Hybrid](https://github.com/92bondstreet/javascript-empire#-course-8---progressive-web-app-world-of-hybrid)
+- [Course 7 - API-ness](https://github.com/92bondstreet/javascript-empire#-course-7---api-ness)
+- [Course 8 - Progressive Web App, world of Hybrid](https://github.com/92bondstreet/javascript-empire#-course-8---progressive-web-app-world-of-hybrid)
 
 ## Licence
 
